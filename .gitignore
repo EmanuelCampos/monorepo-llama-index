@@ -1,3 +1,13 @@
 node_modules
 .DS_Store
 .env
+
+## Ignore Essays folder
+essays/**
+
+## Expect these files for example
+!essays/haters.txt
+!essays/having-kids.txt
+!essays/five-founders.txt
+!essays/hackers-and-painters.txt
+!essays/do-things-that-dont-scale.txt
