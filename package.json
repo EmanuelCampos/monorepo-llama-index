@@ -7,5 +7,13 @@
   "license": "MIT",
   "dependencies": {
     "puppeteer": "^20.4.0"
+  },
+  "scripts": {
+    "es": "node -r esbuild-register",
+    "crawler": "yarn es ./src/analyzeLinks.ts"
+  },
+  "devDependencies": {
+    "esbuild": "^0.17.19",
+    "esbuild-register": "^3.4.2"
   }
 }
