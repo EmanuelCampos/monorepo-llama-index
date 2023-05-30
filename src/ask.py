@@ -1,6 +1,6 @@
 from llama_index import StorageContext, load_index_from_storage
 
-query_param = "5 bullets with core things about do things that don't scale"
+query_param = "founders should go on events?"
 
 # rebuild storage context
 storage_context = StorageContext.from_defaults(persist_dir="./storage")
