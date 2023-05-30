@@ -56,7 +56,7 @@ async function getAllTextFromPage(page, url) {
 
   
 async function saveTextToFile(texts, fileName = 'output.txt') {
-    const folderName = 'essays';
+    const folderName = 'essaysCache';
     const filePath = `${folderName}/${fileName}`;
   
     // Create the folder if it doesn't exist

@@ -4,6 +4,7 @@ node_modules
 
 ## Ignore Essays folder
 essays/**
+essaysCache/**
 
 ## Expect these files for example
 !essays/haters.txt
@@ -11,3 +12,5 @@ essays/**
 !essays/five-founders.txt
 !essays/hackers-and-painters.txt
 !essays/do-things-that-dont-scale.txt
+
+storage
