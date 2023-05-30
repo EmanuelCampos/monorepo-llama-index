@@ -1,0 +1,43 @@
+Arguments: 
+  /Users/emanuel/.nvm/versions/node/v16.14.2/bin/node /usr/local/bin/yarn add puppeter
+
+PATH: 
+  /Users/emanuel/miniconda3/bin:/Users/emanuel/miniconda3/condabin:/Users/emanuel/.opam/default/bin:/Users/emanuel/.nvm/versions/node/v16.14.2/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/emanuel/.cargo/bin:/Users/emanuel/.foundry/bin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  16.14.2
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/puppeter: Not found
+      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:67029:18)
+      at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140883:22)
+      at Request.emit (node:events:526:28)
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141855:10)
+      at Request.emit (node:events:526:28)
+      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141777:12)
+      at Object.onceWrapper (node:events:645:28)
+      at IncomingMessage.emit (node:events:538:35)
+      at endReadableNT (node:internal/streams/readable:1345:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+npm manifest: 
+  {
+    "name": "llama-index-thinkers",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "git@github.com:EmanuelCampos/llama-index-thinkers.git",
+    "author": "Emanuel Ferreira <contatoferreirads@gmail.com>",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
