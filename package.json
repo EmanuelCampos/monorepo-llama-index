@@ -10,7 +10,7 @@
   },
   "scripts": {
     "es": "node -r esbuild-register",
-    "crawler": "yarn es ./src/analyzeLinks.ts"
+    "crawler": "yarn es ./src/generateTextFiles.ts"
   },
   "devDependencies": {
     "esbuild": "^0.17.19",
