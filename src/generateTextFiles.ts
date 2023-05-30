@@ -3,6 +3,8 @@ import fs from 'fs';
 
 import config from '../config.json';
 
+const FOLDER_OUTPUT = 'essays'
+
 function convertToSlug(title) {
     return title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
 }
@@ -16,7 +18,7 @@ async function hasAvailableWebsites() {
 }
 
 async function getEssayLinks(page: Page) {
-    await page.goto('http://paulgraham.com/articles.html', {
+    await page.goto('https://nav.al/archive', {
         timeout: 0,
     });
     
@@ -56,7 +58,7 @@ async function getAllTextFromPage(page, url) {
 
   
 async function saveTextToFile(texts, fileName = 'output.txt') {
-    const folderName = 'essaysCache';
+    const folderName = FOLDER_OUTPUT;
     const filePath = `${folderName}/${fileName}`;
   
     // Create the folder if it doesn't exist
