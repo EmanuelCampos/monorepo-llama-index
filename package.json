@@ -5,12 +5,17 @@
   "repository": "git@github.com:EmanuelCampos/llama-index-thinkers.git",
   "author": "Emanuel Ferreira <contatoferreirads@gmail.com>",
   "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
   "dependencies": {
     "puppeteer": "^20.4.0"
   },
   "scripts": {
-    "es": "node -r esbuild-register",
-    "crawler": "yarn es ./src/generateTextFiles.ts"
+    "crawler": "yarn workspace @llama-index-thinkers/crawler start"
   },
   "devDependencies": {
     "esbuild": "^0.17.19",
