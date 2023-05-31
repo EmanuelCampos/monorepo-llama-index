@@ -1,6 +1,8 @@
 # Monorepo llama Index
 A monorepo to index essays and articles ob LLMs
 
+![A screenshot of website package](./assets/readme-img.png)
+
 ## How To Setup
 OPENAI_API_KEY 
 
