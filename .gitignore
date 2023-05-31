@@ -16,14 +16,14 @@ env.bak/
 venv.bak/
 
 ## Ignore Essays folder
-essays/**
-essaysCache/**
+examples/**
+examplesCache/**
 
 ## Expect these files for example
-!essays/haters.txt
-!essays/having-kids.txt
-!essays/five-founders.txt
-!essays/hackers-and-painters.txt
-!essays/do-things-that-dont-scale.txt
+!examples/haters.txt
+!examples/having-kids.txt
+!examples/five-founders.txt
+!examples/hackers-and-painters.txt
+!examples/do-things-that-dont-scale.txt
 
 storage
