@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "name": "@llama-index-thinkers/crawler",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "es": "node -r esbuild-register",
+    "start": "yarn es ./src/generateTextFiles.ts"
+  }
+}
