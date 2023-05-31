@@ -1,8 +1,8 @@
 {
-  "name": "llama-index-thinkers",
+  "name": "monorepo-llama-index",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:EmanuelCampos/llama-index-thinkers.git",
+  "repository": "git@github.com:EmanuelCampos/monorepo-llama-index.git",
   "author": "Emanuel Ferreira <contatoferreirads@gmail.com>",
   "license": "MIT",
   "private": true,
@@ -15,7 +15,7 @@
     "puppeteer": "^20.4.0"
   },
   "scripts": {
-    "crawler": "yarn workspace @llama-index-thinkers/crawler start"
+    "crawler": "yarn workspace @monorepo-llama-index/crawler start"
   },
   "devDependencies": {
     "esbuild": "^0.17.19",

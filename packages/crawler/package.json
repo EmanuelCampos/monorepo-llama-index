@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@llama-index-thinkers/crawler",
+  "name": "@monorepo-llama-index/crawler",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",

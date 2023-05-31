@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 const NavalWebsite = () => {
+  const [apiKey, setApiKey] = useState('');
   const [question, setQuestion] = useState('');
   const [response, setResponse] = useState('');
 
@@ -14,7 +15,7 @@ const NavalWebsite = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ question }),
+        body: JSON.stringify({ question, apiKey }),
       });
 
       const data = await response.json();
@@ -27,27 +28,41 @@ const NavalWebsite = () => {
 
   return (
     <div style={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      height: '100vh',
-      width: '100vw',
-    }}>
-      <h1>Ask Naval</h1>
-      <form onSubmit={handleSubmit} style={{ 
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: '1rem',
+        height: '100vh',
+        width: '100vw',
+    }}>
+      <h1>Ask Naval</h1>
+      <form onSubmit={handleSubmit} style={{ 
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '1rem',
       }}>
-        <label htmlFor="question">Ask a question:</label>
+        <label htmlFor="question">What would you like to know about Naval Essays?</label>
         <input
           type="text"
           id="question"
+          required
+          placeholder='e.g. "How do I get rich?"'
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
+          style={{
+            width: '300px',
+            height: '2rem',
+          }}
+        />
+        <input
+          type="password"
+          id="api-key"
+          placeholder='Your OpenAI API key'
+          value={apiKey}
+          required
+          onChange={(e) => setApiKey(e.target.value)}
           style={{
             width: '300px',
             height: '2rem',
@@ -56,13 +71,13 @@ const NavalWebsite = () => {
         <button type="submit">Submit</button>
       </form>
       <div style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '1rem',
-        maxWidth: '600px',
-        textAlign: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '1rem',
+          maxWidth: '600px',
+          textAlign: 'center',
       }}>
         <h2>Response:</h2>
         <p>{response}</p>
