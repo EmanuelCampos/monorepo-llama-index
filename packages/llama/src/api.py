@@ -6,8 +6,6 @@ from langchain.llms import OpenAI
 # rebuild storage context
 storage_context = StorageContext.from_defaults(persist_dir="storage")
 
-
-
 app = Flask(__name__)
 cors = CORS(app)
 
