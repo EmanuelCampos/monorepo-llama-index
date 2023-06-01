@@ -15,7 +15,8 @@
     "puppeteer": "^20.4.0"
   },
   "scripts": {
-    "crawler": "yarn workspace @monorepo-llama-index/crawler start"
+    "crawler": "yarn workspace @monorepo-llama-index/crawler start",
+    "web:dev": "yarn workspace @monorepo-llama-index/web dev"
   },
   "devDependencies": {
     "esbuild": "^0.17.19",
