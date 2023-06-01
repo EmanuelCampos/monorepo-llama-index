@@ -5,6 +5,8 @@ import config from '../../../config.json';
 
 const FOLDER_OUTPUT = 'examples'
 
+const { websites } = config
+
 function convertToSlug(title) {
     return title.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
 }
@@ -18,10 +20,6 @@ async function hasAvailableWebsites() {
 }
 
 async function getEssayLinks(page: Page) {
-    await page.goto('https://nav.al/archive', {
-        timeout: 0,
-    });
-    
     // Get all <a> tags on the page
     const links = await page.$$eval('a', (anchors) =>
         anchors.map((a) => ({
@@ -34,10 +32,6 @@ async function getEssayLinks(page: Page) {
 }
 
 async function getAllTextFromPage(page, url) {
-    await page.goto(url, {
-        timeout: 0
-    });
-  
     // Get all elements with text content
     const elements = await page.$$('body *:not(script):not(style)');
   
@@ -60,20 +54,20 @@ async function getAllTextFromPage(page, url) {
   
 async function saveTextToFile(texts, fileName = 'output.txt') {
     const folderName = FOLDER_OUTPUT;
-    const filePath = `${folderName}/${fileName}`;
+    const folderPath = `../../${folderName}`;
+    const filePath = `${folderPath}/${fileName}`;
   
     // Create the folder if it doesn't exist
-    if (!fs.existsSync(folderName)) {
-      fs.mkdirSync(folderName);
+    if (!fs.existsSync(folderPath)) {
+      fs.mkdirSync(folderPath);
     }
   
     // Save the texts to the file
     fs.writeFileSync(filePath, texts.join('\n'));
   
     console.log(`Texts saved to ${filePath}`);
-  }
+}
 
-  
 (async () => {
     if(!hasAvailableWebsites()) {
         console.warn('No websites to analyze');
@@ -86,16 +80,20 @@ async function saveTextToFile(texts, fileName = 'output.txt') {
 
     const page = await browser.newPage();
 
-    const links = await getEssayLinks(page);
+    for await(const website of websites) {
+        await page.goto(website, {
+            timeout: 0
+        });
 
-    // Display the essay links
-    console.log('Essay Links:');
-    for (const essayLink of links) {
+        const links = await getEssayLinks(page);
 
-        const essayText = await getAllTextFromPage(page, essayLink.href);
-        await saveTextToFile(essayText, `${convertToSlug(essayLink.text)}.txt`)
-    
-        console.log(`- ${essayLink.text}: ${essayLink.href} stored in ${essayLink.text}.txt`);
+        // Display the essay links
+        console.log('Essay Links:');
+        for (const essayLink of links) {
+            const essayText = await getAllTextFromPage(page, essayLink.href);
+            await saveTextToFile(essayText, `${convertToSlug(essayLink.text)}.txt`)
+            console.log(`- ${essayLink.text}: ${essayLink.href} stored in ${essayLink.text}.txt`);
+        }   
     }
 
     // Close the browser

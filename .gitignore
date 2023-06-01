@@ -20,10 +20,14 @@ examples/**
 examplesCache/**
 
 ## Expect these files for example
-!examples/haters.txt
-!examples/having-kids.txt
-!examples/five-founders.txt
-!examples/hackers-and-painters.txt
-!examples/do-things-that-dont-scale.txt
+!examples/self-promotion.txt
+!examples/a-founders-anxiety.txt
+!examples/happiness.txt
+!examples/how-to-get-rich.txt
+!examples/how-to-angel-invest-part-1.txt
+!examples/how-to-angel-invest-part-2.txt
+!examples/ideas-are-the-new-oil.txt
+
+
 
 storage
